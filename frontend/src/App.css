@@ -1,0 +1,554 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+/* ── Navbar ── */
+.navbar {
+  background-color: #1a1a2e;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.logo-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.navbar h1 {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-right: auto;
+}
+
+.navbar input {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  width: 220px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.navbar input::placeholder { color: rgba(255,255,255,0.5); }
+
+.navbar input:focus {
+  background: rgba(255,255,255,0.2);
+  width: 260px;
+}
+
+.navbar button {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.navbar button:first-of-type {
+  background-color: #e94560;
+  color: white;
+}
+
+.navbar button:first-of-type:hover {
+  background-color: #c73652;
+  transform: translateY(-1px);
+}
+
+.navbar button:nth-of-type(2) {
+  background-color: rgba(255,255,255,0.15);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.navbar button:nth-of-type(2):hover {
+  background-color: rgba(255,255,255,0.25);
+}
+
+.logout-btn {
+  background-color: transparent !important;
+  color: #e94560 !important;
+  border: 1px solid #e94560 !important;
+}
+
+.logout-btn:hover {
+  background-color: #e94560 !important;
+  color: white !important;
+}
+
+.nav-user {
+  color: rgba(255,255,255,0.8);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* ── Auth Pages ── */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+}
+
+.auth-box {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.auth-box h2 {
+  color: #1a1a2e;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.auth-subtitle {
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s;
+  background: #fafafa;
+  color: black;
+}
+
+.form-group input:focus {
+  border-color: #e94560;
+  background: white;
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #1a1a2e, #e94560);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: opacity 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.auth-btn:hover { opacity: 0.9; }
+
+.auth-switch {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #888;
+}
+
+.auth-switch span {
+  color: #e94560;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.auth-switch span:hover { text-decoration: underline; }
+
+/* ── Admin Panel ── */
+.admin-panel {
+  background: white;
+  margin: 20px 30px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  border-top: 4px solid #e94560;
+}
+
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.admin-header h2 {
+  color: #1a1a2e;
+  font-size: 1.1rem;
+}
+
+.admin-header button {
+  background: none;
+  border: 1px solid #ddd;
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #888;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.admin-header button:hover {
+  background: #fee;
+  border-color: #e94560;
+  color: #e94560;
+}
+
+.admin-panel form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.admin-panel form input {
+  padding: 9px 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 180px;
+  outline: none;
+  transition: border 0.2s;
+  background: #fafafa;
+  color: black;
+}
+
+.admin-panel form input:focus {
+  border-color: #e94560;
+  background: white;
+}
+
+.admin-panel form button {
+  padding: 9px 22px;
+  background-color: #1a1a2e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.admin-panel form button:hover {
+  background-color: #e94560;
+  transform: translateY(-1px);
+}
+
+.admin-panel table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.admin-panel th {
+  background-color: #1a1a2e;
+  color: white;
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 500;
+}
+
+.admin-panel td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #444;
+}
+
+.admin-panel tr:hover td { background-color: #fafafa; }
+
+.admin-panel tbody button {
+  padding: 5px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: opacity 0.2s;
+  margin-right: 5px;
+}
+
+.admin-panel tbody button:first-child {
+  background-color: #3498db;
+  color: white;
+}
+
+.admin-panel tbody button:last-child {
+  background-color: #e94560;
+  color: white;
+}
+
+.admin-panel tbody button:hover { opacity: 0.85; }
+
+/* ── Products Section ── */
+.products-section {
+  padding: 25px 30px;
+}
+
+.products-section h2 {
+  color: #1a1a2e;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e94560;
+  display: inline-block;
+}
+
+/* ── Products Grid ── */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* ── Product Card ── */
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.no-image {
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.3);
+  font-size: 14px;
+}
+
+.product-info { padding: 15px; }
+
+.product-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+.product-category {
+  font-size: 12px;
+  color: #e94560;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.product-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 12px;
+}
+
+.product-info button {
+  width: 100%;
+  padding: 9px;
+  background-color: #1a1a2e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.product-info button:hover { background-color: #e94560; }
+
+/* ── Cart Overlay ── */
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 200;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ── Cart Drawer ── */
+.cart-drawer {
+  background: white;
+  width: 620px;
+  height: 100%;
+  overflow-y: auto;
+  padding: 25px;
+  box-shadow: -5px 0 30px rgba(0,0,0,0.15);
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.cart-header h2 {
+  color: #1a1a2e;
+  font-size: 1.1rem;
+}
+
+.cart-header button {
+  background: none;
+  border: 1px solid #ddd;
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #888;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.cart-header button:hover {
+  background: #fee;
+  border-color: #e94560;
+  color: #e94560;
+}
+
+.cart-drawer table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.cart-drawer th {
+  background-color: #1a1a2e;
+  color: white;
+  padding: 9px 10px;
+  text-align: left;
+  font-weight: 500;
+  width: 400px;
+}
+
+.cart-drawer td {
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #444;
+}
+
+.cart-drawer tbody button {
+  padding: 4px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: rgb(219, 86, 86);
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.15s;
+}
+
+.cart-drawer tbody button:hover {
+  background: #1a1a2e;
+  color: white;
+  border-color: #1a1a2e;
+}
+
+.empty-cart {
+  color: #aaa;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 15px;
+}
+
+.cart-total {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-top: 15px;
+}
+
+.place-order-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #e94560, #c73652);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+}
+
+.place-order-btn:hover { opacity: 0.9; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .navbar { padding: 12px 15px; gap: 10px; }
+  .navbar input { width: 120px; }
+  .navbar input:focus { width: 150px; }
+  .products-section { padding: 20px 15px; }
+  .admin-panel { margin: 15px; padding: 15px; }
+  .cart-drawer { width: 100%; }
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+  }
+}
